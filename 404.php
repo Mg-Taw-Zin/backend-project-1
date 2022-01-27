@@ -1,5 +1,6 @@
 <?php
-include_once "partials/header.php"
+include_once "partials/header.php";
+include_once "partials/header-banner.php"
 ?>
 <div class="container text-center">
     <div class="logo-404">

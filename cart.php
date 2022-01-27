@@ -1,5 +1,6 @@
 <?php
-include_once "partials/header.php"
+include_once "partials/header.php";
+include_once "partials/header-banner.php"
 ?>
 <section id="cart_items">
     <div class="container">
@@ -36,8 +37,7 @@ include_once "partials/header.php"
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
                                 <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                    autocomplete="off" size="2">
+                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
                                 <a class="cart_quantity_down" href=""> - </a>
                             </div>
                         </td>
@@ -63,8 +63,7 @@ include_once "partials/header.php"
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
                                 <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                    autocomplete="off" size="2">
+                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
                                 <a class="cart_quantity_down" href=""> - </a>
                             </div>
                         </td>
@@ -89,8 +88,7 @@ include_once "partials/header.php"
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
                                 <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                    autocomplete="off" size="2">
+                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
                                 <a class="cart_quantity_down" href=""> - </a>
                             </div>
                         </td>

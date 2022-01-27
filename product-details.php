@@ -1,5 +1,6 @@
 <?php
-include_once "partials/header.php"
+include_once "partials/header.php";
+include_once "partials/header-banner.php"
 ?>
 <section>
     <div class="container">
@@ -137,8 +138,7 @@ include_once "partials/header.php"
                         <!--price-range-->
                         <h2>Price Range</h2>
                         <div class="well">
-                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600"
-                                data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
                             <b>$ 0</b> <b class="pull-right">$ 600</b>
                         </div>
                     </div>
@@ -212,8 +212,7 @@ include_once "partials/header.php"
                             <p><b>Availability:</b> In Stock</p>
                             <p><b>Condition:</b> New</p>
                             <p><b>Brand:</b> E-SHOPPER</p>
-                            <a href=""><img src="images/product-details/share.png" class="share img-responsive"
-                                    alt="" /></a>
+                            <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a>
                         </div>
                         <!--/product-information-->
                     </div>
@@ -239,8 +238,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -252,8 +250,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -265,8 +262,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -278,8 +274,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -294,8 +289,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -307,8 +301,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -320,8 +313,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -333,8 +325,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -349,8 +340,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery1.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -362,8 +352,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery2.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -375,8 +364,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery3.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -388,8 +376,7 @@ include_once "partials/header.php"
                                             <img src="images/home/gallery4.jpg" alt="" />
                                             <h2>$56</h2>
                                             <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
@@ -442,8 +429,7 @@ include_once "partials/header.php"
                                                 <img src="images/home/recommend1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -455,8 +441,7 @@ include_once "partials/header.php"
                                                 <img src="images/home/recommend2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -468,8 +453,7 @@ include_once "partials/header.php"
                                                 <img src="images/home/recommend3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -483,8 +467,7 @@ include_once "partials/header.php"
                                                 <img src="images/home/recommend1.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -496,8 +479,7 @@ include_once "partials/header.php"
                                                 <img src="images/home/recommend2.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -509,8 +491,7 @@ include_once "partials/header.php"
                                                 <img src="images/home/recommend3.jpg" alt="" />
                                                 <h2>$56</h2>
                                                 <p>Easy Polo Black Edition</p>
-                                                <button type="button" class="btn btn-default add-to-cart"><i
-                                                        class="fa fa-shopping-cart"></i>Add to cart</button>
+                                                <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                             </div>
                                         </div>
                                     </div>

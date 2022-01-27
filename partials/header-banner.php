@@ -1,33 +1,8 @@
+<?php session_start(); ?>
 <?php
-session_start();
-require "db.php";
-
-$login_errors = [];
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    if (isset($_POST['login'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $password = md5($password);
-        $mypass = md5('123456');
-        if ($email === "admin@myshop.com" && $password = $mypass) {
-            $_SESSION['name'] = "admin";
-            header("location:admin-dashboard.php?message=welcome admin");
-        }
-        $user_qry = "SELECT * FROM `users` WHERE email = '$email'";
-        $user_res = mysqli_query($db_connection, $user_qry);
-        $fetch_user = mysqli_fetch_assoc($user_res);
-        $fetch_email = $fetch_user['email'];
-        $fetch_password = $fetch_user['password'];
-        if ($email === $fetch_email && $password === $fetch_password) {
-            $_SESSION['name'] = $fetch_user['name'];
-            $name = $fetch_user['name'];
-            header("location:index.php?message=welcome $name");
-        }
-    }
-}
-require "partials/header.php";
-
+$name = isset($_SESSION['name']);
 ?>
+
 
 <header id="header">
     <!--header-->
@@ -38,8 +13,8 @@ require "partials/header.php";
                 <div class="col-sm-6">
                     <div class="contactinfo">
                         <ul class="nav nav-pills">
-                            <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                            <li><a href="#"><i class="fa fa-phone"></i> +959752819940</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> zinoo.dev@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -70,23 +45,23 @@ require "partials/header.php";
                     <div class="btn-group pull-right">
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                USA
+                                MYANMAR
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">UK</a></li>
+                                <li><a href="#">Europe</a></li>
+                                <li><a href="#">Asia</a></li>
                             </ul>
                         </div>
 
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-                                DOLLAR
+                                KYAT
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Canadian Dollar</a></li>
-                                <li><a href="#">Pound</a></li>
+                                <li><a href="#">US Dollar</a></li>
+                                <li><a href="#">USDT</a></li>
                             </ul>
                         </div>
                     </div>
@@ -94,17 +69,33 @@ require "partials/header.php";
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                            <li><a href="account-profile.php"><i class="fa fa-user"></i> Account</a></li>
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                             <li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-
-                            <li> <a> </a> </li>
+                            <?php if ($name) : ?>
+                            <li> <a> <?php
+                                            echo $_SESSION['name'];
+                                            ?></a> </li>
+                            <?php else : ?>
                             <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 
-
-                            <li><a href="register.php"><i class="fa fa-lock"></i> register</a></li>
+                            <?php endif ?>
+                            <?php if ($name) : ?>
                             <li><a href="logout.php"><i class="fa fa-lock"></i> logout</a></li>
+                            <?php else : ?>
+                            <li><a href="register.php"><i class="fa fa-lock"></i> register</a></li>
+                            <?php endif ?>
+
+
+
+                            <?php if ($name) : ?>
+                            <?php if ($_SESSION['name'] === "admin") : ?>
+
+                            <li><a href="admin-dashboard.php"><i class="fa fa-lock"></i> Admin</a></li>
+
+                            <?php endif ?>
+                            <?php endif ?>
                         </ul>
                     </div>
                 </div>
@@ -161,37 +152,3 @@ require "partials/header.php";
     <!--/header-bottom-->
 </header>
 <!--/header-->
-<section id="form">
-    <!--form-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-1">
-                <div class="login-form">
-                    <!--login form-->
-                    <h2>Login to your account</h2>
-                    <form action="login.php" method="post">
-                        <?php
-                        if (count($login_errors) > 0) {
-                            foreach ($login_errors as  $errors) {
-                                echo "<b>$errors</b> <br>";
-                            }
-                        }
-
-                        ?>
-                        <input type="email" name="email" placeholder="Email Address" />
-                        <input type="password" name="password" placeholder="Password" />
-
-                        <button type="submit" name="login" class="btn btn-default">Login</button>
-                    </form>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-</section>
-<!--/form-->
-
-<?php
-include_once "partials/footer.php"
-?>
