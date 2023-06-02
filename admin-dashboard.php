@@ -1,6 +1,9 @@
 ﻿<?php
+session_start();
 include "db.php";
 include "partials/header.php";
+$admin = isset($_SESSION['auth']);
+
 
 ?>
 
@@ -25,12 +28,14 @@ include "partials/header.php";
 </head>
 
 <body>
+
     <?php
     $message = $_GET['message'];
+
     ?>
+    <?php if ($admin) : ?>
 
     <div id="wrapper">
-        <h1 class="mes"><?php echo $message; ?></h1>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="adjust-nav">
                 <div class="navbar-header">
@@ -51,6 +56,8 @@ include "partials/header.php";
 
             </div>
         </div>
+        <h1 class="mes"><?php echo $message; ?></h1>
+        <h1 class="mes"><?php echo "hello"; ?></h1>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
@@ -138,6 +145,7 @@ include "partials/header.php";
                 <div class="row">
                     <div class="col-md-12">
                         <h2>Admin Dashboard</h2>
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="">
@@ -152,12 +160,12 @@ include "partials/header.php";
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $qry = "SELECT * FROM categories";
-                                            $res = mysqli_query($db_connection, $qry);
-                                            $i = 1;
-                                            while ($data = mysqli_fetch_assoc($res)) :
+                                                $qry = "SELECT * FROM categories";
+                                                $res = mysqli_query($db_connection, $qry);
+                                                $i = 1;
+                                                while ($data = mysqli_fetch_assoc($res)) :
 
-                                            ?>
+                                                ?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $data['name'] ?></td>
@@ -196,6 +204,12 @@ include "partials/header.php";
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
+    <?php else : ?>
+    <?php
+        header('location:index.php')
+        ?>
+    <?php endif ?>
+
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->

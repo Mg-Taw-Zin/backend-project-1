@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $mypass = md5('123456');
         if ($email === "admin@myshop.com" && $password = $mypass) {
             $_SESSION['name'] = "admin";
+            $_SESSION['auth'] = "admin";
             header("location:admin-dashboard.php?message=welcome admin");
         }
         $user_qry = "SELECT * FROM `users` WHERE email = '$email'";

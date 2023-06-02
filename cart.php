@@ -1,4 +1,5 @@
 <?php
+include "db.php";
 include_once "partials/header.php";
 include_once "partials/header-banner.php"
 ?>
@@ -23,82 +24,53 @@ include_once "partials/header-banner.php"
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/one.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Colorblock Scuba</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
+                    <?php
+                    if (!isset($_SESSION['cart'])) {
+                        echo "Item Not Found";
+                        return;
+                    }
+
+                    $total = 0;
+                    foreach ($_SESSION['cart'] as $id => $qty) :
+                        $result = mysqli_query($db_connection, "SELECT * FROM products WHERE id = $id ");
+                        $data = mysqli_fetch_assoc($result);
+                        $total = $data['price'] * $qty;
+
+                    ?>
 
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="images/cart/two.png" alt=""></a>
+                            <a href=""><img width="200" src="images/shop/<?php echo $data['image'] ?>" alt=""></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="">Colorblock Scuba</a></h4>
-                            <p>Web ID: 1089772</p>
+                            <h4><a href=""><?php echo $data['name'] ?></a></h4>
+                            <p>Product ID: <?php echo $data['id'] ?></p>
                         </td>
                         <td class="cart_price">
-                            <p>$59</p>
+                            <p><?php echo $data['price'] ?></p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
+                                <a class="cart_quantity_up" href="add-to-cart.php?id=<?php echo $data['id'] ?>"> + </a>
+                                <input class="cart_quantity_input" type="text" name="quantity"
+                                    value="<?php echo $qty ?>" autocomplete="off" size="2">
+                                <a class="cart_quantity_down" href="drop-to-cart.php?id=<?php echo $data['id'] ?>"> -
+                                </a>
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
+                            <p class="cart_total_price"><?php echo $total; ?></p>
                         </td>
                         <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                            <a class="cart_quantity_delete" href="clear-cart.php?id=<?php echo $data['id'] ?>"><i
+                                    class="fa fa-times"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/three.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Colorblock Scuba</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
+                    <?php
+                    endforeach
+                    ?>
+
+
                 </tbody>
             </table>
         </div>

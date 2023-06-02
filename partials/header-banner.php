@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php
+session_start();
+if (isset($_SESSION['cart'])) {
+    $carts = $_SESSION['cart'];
+    $total = 0;
+    foreach ($carts as $id => $qty) {
+        $total += $qty;
+    }
+};
+
+
+?>
 <?php
 $name = isset($_SESSION['name']);
 ?>
@@ -72,7 +83,8 @@ $name = isset($_SESSION['name']);
                             <li><a href="account-profile.php"><i class="fa fa-user"></i> Account</a></li>
                             <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                             <li><a href="checkout.php"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart <span
+                                        class="cart-count"><?php echo $total ?? ''  ?></span> </a></li>
                             <?php if ($name) : ?>
                             <li> <a> <?php
                                             echo $_SESSION['name'];

@@ -11,21 +11,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $address = $_POST['address'];
     }
     if (!$name) {
-        $register_errors[] = "name required";
+        $register_errors[] = "Name required";
     }
     if (!$email) {
-        $register_errors[] = "email required";
+        $register_errors[] = "Email required";
     }
     if (!$phone) {
-        $register_errors[] = "phone required";
+        $register_errors[] = "Phone required";
     }
     $e_check = "SELECT * FROM users WHERE email = '$email'";
     $res_email = mysqli_query($db_connection, $e_check);
+    // print_r($res_email);
+    // die();
     if (mysqli_num_rows($res_email) > 0) {
         $register_errors[] = "email already exist!";
     }
     if (count($register_errors) == 0) {
-        $register_qry = "INSERT INTO `users`(`user_id`, `name`, `email`, `password`, `phone`, `address`, `create_date`, `updated_date`) VALUES ('','$name','$email','$password','$phone','$address',now(),now())";
+        $register_qry = "INSERT INTO `users`( `name`, `email`, `password`, `phone`, `address`, `create_date`, `updated_date`) VALUES ('$name','$email','$password','$phone','$address',now(),now())";
         $results = mysqli_query($db_connection, $register_qry);
         if ($results) {
             header('location:login.php');
@@ -125,7 +127,8 @@ include_once "partials/header.php";
             <div class="row">
                 <div class="col-sm-9">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>

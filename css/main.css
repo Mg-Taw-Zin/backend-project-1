@@ -64,7 +64,14 @@ a#scrollUp i{
   font-size: 30px;
 }
 
-
+.pagination>a {
+  background: brown;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: antiquewhite;
+}
 /*************************
 *******Header CSS******
 **************************/
