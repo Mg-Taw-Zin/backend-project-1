@@ -4,7 +4,6 @@ include "db.php";
 include "partials/header.php";
 $admin = isset($_SESSION['auth']);
 
-
 ?>
 
 <!DOCTYPE html>
@@ -30,10 +29,10 @@ $admin = isset($_SESSION['auth']);
 <body>
 
     <?php
-    $message = $_GET['message'];
+$message = $_GET['message'];
 
-    ?>
-    <?php if ($admin) : ?>
+?>
+    <?php if ($admin): ?>
 
     <div id="wrapper">
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -160,12 +159,12 @@ $admin = isset($_SESSION['auth']);
                                         </thead>
                                         <tbody>
                                             <?php
-                                                $qry = "SELECT * FROM categories";
-                                                $res = mysqli_query($db_connection, $qry);
-                                                $i = 1;
-                                                while ($data = mysqli_fetch_assoc($res)) :
+$qry = "SELECT * FROM categories";
+$res = mysqli_query($db_connection, $qry);
+$i = 1;
+while ($data = mysqli_fetch_assoc($res)):
 
-                                                ?>
+?>
                                             <tr>
                                                 <td><?php echo $i++; ?></td>
                                                 <td><?php echo $data['name'] ?></td>
@@ -180,7 +179,7 @@ $admin = isset($_SESSION['auth']);
                                                             Delete</span></a>
                                                 </td>
                                             </tr>
-                                            <?php endwhile ?>
+                                            <?php endwhile?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -204,11 +203,11 @@ $admin = isset($_SESSION['auth']);
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
-    <?php else : ?>
+    <?php else: ?>
     <?php
-        header('location:index.php')
-        ?>
-    <?php endif ?>
+header('location:index.php')
+?>
+    <?php endif?>
 
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->

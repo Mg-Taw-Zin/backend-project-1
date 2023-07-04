@@ -1,5 +1,5 @@
 <?php
-include_once  "db.php";
+include_once "db.php";
 $register_errors = [];
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if (isset($_POST['register'])) {
@@ -180,12 +180,12 @@ include_once "partials/header.php";
                         <form action="register.php" method="post">
 
                             <?php
-                            if (count($register_errors) > 0) {
-                                foreach ($register_errors as $errors) {
-                                    echo "<b>$errors</b> <br>";
-                                }
-                            }
-                            ?>
+if (count($register_errors) > 0) {
+    foreach ($register_errors as $errors) {
+        echo "<b>$errors</b> <br>";
+    }
+}
+?>
                             <input type="text" name="name" placeholder="Name" />
                             <input type="email" name="email" placeholder="Email Address" />
                             <input type="password" name="password" placeholder="Password" />

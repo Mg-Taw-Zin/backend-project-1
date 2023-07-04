@@ -9,7 +9,6 @@ if (isset($_POST['submit'])) {
     header('location:index.php');
 }
 
-
 include "partials/header-banner.php";
 ?>
 <div class="w-50 p-5 m-5 m-auto">
@@ -18,12 +17,12 @@ include "partials/header-banner.php";
         <div class="mb-3">
             <select name="category_id" id="">
                 <?php
-                $res = mysqli_query($db_connection, "SELECT id,name FROM categories");
-                while ($data = mysqli_fetch_assoc($res)) :
+$res = mysqli_query($db_connection, "SELECT id,name FROM categories");
+while ($data = mysqli_fetch_assoc($res)):
 
-                ?>
+?>
                 <option value="<?php echo $data['id'] ?>"><?php echo $data['name'] ?></option>
-                <?php endwhile ?>
+                <?php endwhile?>
             </select>
         </div>
         <input type="text" name="name" placeholder="insert sub category" class="form-control mb-3">

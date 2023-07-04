@@ -172,13 +172,13 @@ require "partials/header.php";
                     <h2>Login to your account</h2>
                     <form action="login.php" method="post">
                         <?php
-                        if (count($login_errors) > 0) {
-                            foreach ($login_errors as  $errors) {
-                                echo "<b>$errors</b> <br>";
-                            }
-                        }
+if (count($login_errors) > 0) {
+    foreach ($login_errors as $errors) {
+        echo "<b>$errors</b> <br>";
+    }
+}
 
-                        ?>
+?>
                         <input type="email" name="email" placeholder="Email Address" />
                         <input type="password" name="password" placeholder="Password" />
 
